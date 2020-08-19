@@ -1,0 +1,67 @@
+body {
+    background-image: linear-gradient(to top, #b2b3b8 0%, #dadada 100%);
+  }
+  form {
+    display: block;
+    margin: 0 auto;
+    border-radius: 80px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+    color: #757575;
+    font-size: unset;
+  }
+  
+  h1 {
+    padding: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    display: block;
+    font-size: 50px;
+    padding: 50px;
+  }
+  h4 i {
+    display: block;
+    font-size: 50px;
+  }
+  
+  li {
+    color: #757575;
+    display: block;
+    text-align: center;
+  }
+  .weather-app {
+    border: 1px solid #949494;
+    padding: 20px;
+    margin: 20px;
+    max-width: 630px;
+    margin: auto;
+    border-radius: 10px;
+    font-family: "Quicksand", sans-serif;
+  }
+  .temperature {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .next-week {
+    margin-top: 30px;
+  
+    color: #757575;
+    text-align: center;
+  }
+footer {
+    display:block;
+    text-align:center;
+}  

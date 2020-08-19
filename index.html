@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <form id="search-form">
+                <div class="row">
+                    <div class ="col-8">
+                <input class="form-control form-control-lg shadow-sm border-0 rounded-pill " type="search"
+                    placeholder="Enter a city..." id="enter-a-city" />
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class= "btn btn-sucess w-100 rounded-pill border-0 shadow-sm" id="current-location-button">Current location</button>
+                    </div>
+                </div>
+            </form>
+            <h1>
+                Should be city
+            </h1>
+            <h2>
+                Should be time
+            </h2>
+            <h3>
+            Should be date
+            </h3>
+            <h4>
+                <i class="fas fa-cloud-sun-rain"></i>
+                <span class="temperature" id="temperature">19 </span><span class="units" id="c-units"><a href="#">°C
+                    </a> |</span><span id="f-units"><a href="#">°F</a></span>
+            </h4>
+            <li>
+                <ul>
+                    Humidity: <span id="humidity">82</span> %
+                </ul>
+                <ul>
+                    Wind: <span id="wind">4 </span> m/s
+                </ul>
+            </li>
+            <div>
+                <div class="next-week">
+                    <div class="row">
+                        <div class="col-2">Mon</div>
+                        <div class="col-2">Tue</div>
+                        <div class="col-2">Wed</div>
+                        <div class="col-2">Thu</div>
+                        <div class="col-2">Fri</div>
+                        <div class="col-2">Sat</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">+11 °C</div>
+                        <div class="col-2">+12 °C</div>
+                        <div class="col-2">+12 °C</div>
+                        <div class="col-2">+10 °C</div>
+                        <div class="col-2">+13 °C</div>
+                        <div class="col-2">+16 °C</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"><i class="fas fa-cloud-sun-rain"></i></div>
+                        <div class="col-2"><i class="fas fa-cloud-sun-rain"></i></div>
+                        <div class="col-2"><i class="fas fa-cloud-sun-rain"></i></div>
+                        <div class="col-2"><i class="fas fa-cloud-sun-rain"></i></div>
+                        <div class="col-2"><i class="fas fa-cloud-sun-rain"></i></div>
+                        <div class="col-2"><i class="fas fa-cloud-sun-rain"></i></div>
+                    </div>
+                </div>
+                <script src="https://kit.fontawesome.com/b0a6d0e904.js" crossorigin="anonymous"></script>
+                <script src="src/index.js"></script>
+            </div>
+        </div>
+        <footer><a href="https://github.com/agnejan/My-first-project">Open-source code</a> by Agne Januskeviciute</footer>
+</body>
+
+</html>
