@@ -65,7 +65,6 @@ document
   .addEventListener("click", getCurrentLocation);
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -83,6 +82,8 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#main-icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 function searchCity(city) {
@@ -99,7 +100,35 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  convertCelsius.classList.remove("active");
+  convertFahrenheit.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  convertCelsius.classList.add("active");
+  convertFahrenheit.classList.remove("active");
+  document.querySelector("#temperature").innerHTML = Math.round(
+    celsiusTemperature
+  );
+}
+
+let celsiusTemperature = null;
+
+let convertFahrenheit = document.querySelector("#f-units");
+convertFahrenheit.addEventListener("click", displayFahrenheitTemperature);
+
+let convertCelsius = document.querySelector("#c-units");
+convertCelsius.addEventListener("click", displayCelsiusTemperature);
+
 let city = document.querySelector("#enter-a-city").value;
+
 if (city.length === 0) {
   searchCity("Vilnius");
 }

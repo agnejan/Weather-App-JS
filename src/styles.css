@@ -10,6 +10,7 @@ form {
 #current-location-button {
   margin-top: 7px;
 }
+
 h1,
 h2,
 h3,
@@ -34,6 +35,11 @@ h3 {
 h4 {
   display: block;
   font-size: 50px;
+}
+#units {
+  top: -20px;
+  position: relative;
+  font-size: 20px;
 }
 
 #main-icon {
@@ -70,4 +76,14 @@ li {
 footer {
   display: block;
   text-align: center;
+}
+
+#units .active {
+  color: #757575;
+  cursor: default;
+  font-weight: bolder;
+}
+
+#units .active:hover {
+  text-decoration: none;
 }
