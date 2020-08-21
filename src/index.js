@@ -65,8 +65,6 @@ document
   .addEventListener("click", getCurrentLocation);
 
 function displayWeatherCondition(response) {
-  console.log(response);
-
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -86,14 +84,110 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#main-icon")
     .setAttribute("alt", response.data.weather[0].description);
-
   celsiusTemperature = response.data.main.temp;
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+function displayForecast(response) {
+  console.log(response);
+  let forecast = response.data.list[0];
+  document.querySelector("#next-week #forecast1").innerHTML = Math.round(
+    forecast.main.temp
+  );
+  document
+    .querySelector("#next-week #img1")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    );
+
+  document.querySelector("#hour1").innerHTML = formatHours(forecast.dt * 1000);
+
+  forecast = response.data.list[1];
+  document.querySelector("#next-week #forecast2").innerHTML = Math.round(
+    forecast.main.temp
+  );
+  document
+    .querySelector("#next-week #img2")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    );
+
+  document.querySelector("#hour2").innerHTML = formatHours(forecast.dt * 1000);
+
+  forecast = response.data.list[2];
+  document.querySelector("#next-week #forecast3").innerHTML = Math.round(
+    forecast.main.temp
+  );
+  document
+    .querySelector("#next-week #img3")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    );
+
+  document.querySelector("#hour3").innerHTML = formatHours(forecast.dt * 1000);
+
+  forecast = response.data.list[3];
+  document.querySelector("#next-week #forecast4").innerHTML = Math.round(
+    forecast.main.temp
+  );
+  document
+    .querySelector("#next-week #img4")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    );
+
+  document.querySelector("#hour4").innerHTML = formatHours(forecast.dt * 1000);
+
+  forecast = response.data.list[4];
+  document.querySelector("#next-week #forecast5").innerHTML = Math.round(
+    forecast.main.temp
+  );
+  document
+    .querySelector("#next-week #img5")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    );
+
+  document.querySelector("#hour5").innerHTML = formatHours(forecast.dt * 1000);
+
+  forecast = response.data.list[5];
+  document.querySelector("#next-week #forecast6").innerHTML = Math.round(
+    forecast.main.temp
+  );
+  document
+    .querySelector("#next-week #img6")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`
+    );
+
+  document.querySelector("#hour6").innerHTML = formatHours(forecast.dt * 1000);
 }
 
 function searchCity(city) {
   let apiKey = "b0be3ba09e4893c23e9867bcadaa0a7d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {

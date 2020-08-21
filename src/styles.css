@@ -1,6 +1,10 @@
 body {
   background-image: linear-gradient(to top, #b2b3b8 0%, #dadada 100%);
 }
+
+.container {
+  margin-top: 20px;
+}
 form {
   display: block;
   margin: 0 auto;
@@ -22,8 +26,8 @@ h4 {
 
 h1 {
   padding: 30px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 60px;
+  font-weight: bolder;
 }
 h2 {
   font-size: 18px;
@@ -58,10 +62,10 @@ li:first-letter {
 }
 
 .weather-app {
+  margin: auto;
   border: 1px solid #949494;
   padding: 20px;
   max-width: 630px;
-  margin: auto;
   border-radius: 10px;
   font-family: "Quicksand", sans-serif;
 }
@@ -74,13 +78,14 @@ li:first-letter {
 
 .next-week {
   margin-top: 30px;
-
   color: #757575;
   text-align: center;
 }
+
 footer {
   display: block;
   text-align: center;
+  margin-bottom: 500px;
 }
 
 #units .active {
