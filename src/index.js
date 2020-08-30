@@ -102,7 +102,6 @@ function formatHours(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response);
   let forecast = response.data.list[0];
   document.querySelector("#next-week #forecast1").innerHTML = Math.round(
     forecast.main.temp
