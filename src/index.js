@@ -25,15 +25,15 @@ function formattedDate(date) {
     "Sunday",
   ];
   let months = [
-    "Janury",
+    "January",
     "February",
-    "march",
+    "March",
     "April",
     "May",
     "June",
     "July",
     "August",
-    "Septepmber",
+    "September",
     "October",
     "November",
     "December",
